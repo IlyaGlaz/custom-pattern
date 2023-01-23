@@ -2,8 +2,14 @@ package org.iliaglaz.pattern.behavior;
 
 public class MovingOnHorse implements MovementStyle {
 
+    public String action;
+
     @Override
     public void move() {
-        System.out.println("I am a knight");
+        action = "I am a knight";
+    }
+
+    public String getAction() {
+        return action;
     }
 }

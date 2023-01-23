@@ -6,13 +6,23 @@ import org.iliaglaz.pattern.forge.Weapon;
 
 public class HeroService {
 
-    private static Hero hero;
+    private static final HeroService INSTANCE = new HeroService();
+    private Hero hero;
 
-    public static void build(String movement, String weapon) {
-        hero = new Hero(Movement.of(movement), Weapon.of(weapon));
+    private HeroService() {
     }
 
-    public static Hero getHero() {
+    public static HeroService getInstance() {
+        return INSTANCE;
+    }
+
+    public void build(String movement, String weapon) {
+        hero = new Hero(Movement.of(movement), Weapon.of(weapon));
+        hero.onRide();
+        hero.onFight();
+    }
+
+    public Hero getHero() {
         return hero;
     }
 }

@@ -5,7 +5,7 @@
 </head>
 <body>
 <h5>I am a brave hero</h5>
-<h4>When I move I do ${requestScope.hero.movementStyle}</h4>
-<h4>When I fight I do ${requestScope.hero.fightStyle}</h4>
+<h4>When I move I do ${requestScope.hero.movementStyle.action}</h4>
+<h4>When I fight I do ${requestScope.hero.fightStyle.action}</h4>
 </body>
 </html>

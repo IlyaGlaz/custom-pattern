@@ -12,9 +12,11 @@ import java.io.IOException;
 @WebServlet("/hero/ready")
 public class LetsGoServlet extends HttpServlet {
 
+    private HeroService service = HeroService.getInstance();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("hero", HeroService.getHero());
+        req.setAttribute("hero", service.getHero());
 
         req.getRequestDispatcher("/WEB-INF/jsp/hero.jsp")
                 .forward(req, resp);

@@ -12,6 +12,8 @@ import java.io.IOException;
 @WebServlet("/hero")
 public class HeroServlet extends HttpServlet {
 
+    private HeroService service = HeroService.getInstance();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/jsp/customize.jsp")
@@ -23,7 +25,7 @@ public class HeroServlet extends HttpServlet {
         String movement = req.getParameter("movement");
         String weapon = req.getParameter("weapon");
 
-        HeroService.build(movement, weapon);
+        service.build(movement, weapon);
         resp.sendRedirect("/hero/ready");
     }
 }

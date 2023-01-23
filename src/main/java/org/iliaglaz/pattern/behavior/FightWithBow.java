@@ -2,8 +2,14 @@ package org.iliaglaz.pattern.behavior;
 
 public class FightWithBow implements FightStyle{
 
+    public String action;
+
     @Override
     public void fight() {
-        System.out.println("Hit them on a distance");
+        action = "Hit them on a distance";
+    }
+
+    public String getAction() {
+        return action;
     }
 }
