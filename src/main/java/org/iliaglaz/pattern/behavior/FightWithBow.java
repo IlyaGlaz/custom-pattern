@@ -6,7 +6,7 @@ public class FightWithBow implements FightStyle{
 
     @Override
     public void fight() {
-        action = "Hit them on a distance";
+        action = "Hit them on a distance, I am an Elf";
     }
 
     public String getAction() {
